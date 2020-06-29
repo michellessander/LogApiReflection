@@ -1,4 +1,5 @@
 using LogApiReflection.Repositories;
+using LogApiReflection.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.DependencyInjection;
@@ -30,6 +31,7 @@ namespace LogApiReflection
             services.AddDbContext<OrderedRepository>(opt => opt.UseInMemoryDatabase("LogApiReflection"));
             services.AddControllers();
             services.AddScoped<IOrderedRepository, OrderedRepository>();
+            services.AddScoped<IOrderedService, OrderedService>();
         }
     }
 }

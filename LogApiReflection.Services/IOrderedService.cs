@@ -1,9 +1,9 @@
 ﻿using System.Collections.Generic;
 using LogApiReflection.Domain;
 
-namespace LogApiReflection.Repositories
+namespace LogApiReflection.Services
 {
-    public interface IOrderedRepository
+    public interface IOrderedService
     {
         IEnumerable<Ordered> GetAll();
         Ordered GetById(int id);

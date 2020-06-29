@@ -41,6 +41,7 @@
       </e>
       <e p="LogApiReflection.Services" t="IncludeRecursive">
         <e p="bin" t="ExcludeRecursive" />
+        <e p="IOrderedService.cs" t="Include" />
         <e p="LogApiReflection.Services.csproj" t="IncludeRecursive" />
         <e p="obj" t="ExcludeRecursive">
           <e p="Debug" t="Include">
@@ -49,12 +50,17 @@
             </e>
           </e>
         </e>
+        <e p="OrderedService.cs" t="Include" />
       </e>
       <e p="LogApiReflection.sln" t="IncludeFlat" />
       <e p="LogApiReflection.WebApi" t="IncludeRecursive">
         <e p="appsettings.Development.json" t="Include" />
         <e p="appsettings.json" t="Include" />
         <e p="bin" t="ExcludeRecursive" />
+        <e p="Controllers" t="Include">
+          <e p="OrderedController.cs" t="Include" />
+        </e>
+        <e p="DataGenerator.cs" t="Include" />
         <e p="LogApiReflection.WebApi.csproj" t="IncludeRecursive" />
         <e p="obj" t="ExcludeRecursive">
           <e p="Debug" t="Include">

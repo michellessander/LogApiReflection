@@ -7,6 +7,7 @@
 
     <ItemGroup>
       <ProjectReference Include="..\LogApiReflection.Repositories\LogApiReflection.Repositories.csproj" />
+      <ProjectReference Include="..\LogApiReflection.Services\LogApiReflection.Services.csproj" />
     </ItemGroup>
 
     <ItemGroup>

@@ -22,7 +22,7 @@ namespace LogApiReflection
             {
                 var services = scope.ServiceProvider;
                 services.GetRequiredService<OrderedRepository>();
-                //DataGenerator.Initialize(services);
+                DataGenerator.Initialize(services);
             }
             host.Run();
         }
