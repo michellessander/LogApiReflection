@@ -1,11 +1,8 @@
-﻿using System.Collections.Generic;
-using System.Linq;
-using System.Reflection;
+﻿using System.Linq;
 using System.Text.Json;
 using LogApiReflection.Domain;
 using LogApiReflection.Services.Books;
 using Microsoft.AspNetCore.Mvc;
-using Newtonsoft.Json;
 
 namespace LogApiReflection.Controllers
 {
@@ -37,13 +34,12 @@ namespace LogApiReflection.Controllers
             return Ok(result);
         }
 
-        // [HttpPost]
-        // public IActionResult Post(Book book)
-        // {
-        //     // var dict = JsonConvert.DeserializeObject<Dictionary<string, string>>(obj.ToString());
-        //     // var response = await _bookService.Insert(dict);
-        //     var response = _bookService.Insert(book);
-        //     return Ok(response);
-        // }
+        [HttpPost]
+        public IActionResult Post([FromBody] JsonElement json)
+        {
+            var book = JsonSerializer.Deserialize<Book>(json.ToString());
+            var response = _bookService.Insert(book);
+            return Ok(response);
+        }
     }
 }
