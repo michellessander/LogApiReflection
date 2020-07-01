@@ -3,15 +3,9 @@ using System.Linq;
 
 namespace LogApiReflection.Domain
 {
-    public class Ordered : EntityBase
+    public class Order : EntityBase
     {
-        public Ordered()
-        {
-            
-        }
-
         public IEnumerable<Book> Books { get; set; }
-
         public double TotalValue => Books.Sum(book => book.Value);
     }
 }

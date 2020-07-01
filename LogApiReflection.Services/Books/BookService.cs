@@ -18,6 +18,6 @@ namespace LogApiReflection.Services.Books
 
         public Book GetById(int id) => _bookRepository.GetById(id);
 
-        public int Insert(Book book) => _bookRepository.Insert(book);
+        public int Add(Book book) => _bookRepository.Add(book);
     }
 }

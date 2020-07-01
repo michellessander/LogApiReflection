@@ -8,6 +8,6 @@ namespace LogApiReflection.Services.Books
     {
         IEnumerable<Book> GetAll();
         Book GetById(int id);
-        int Insert(Book book);
+        int Add(Book book);
     }
 }

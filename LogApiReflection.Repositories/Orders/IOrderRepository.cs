@@ -3,9 +3,9 @@ using LogApiReflection.Domain;
 
 namespace LogApiReflection.Repositories
 {
-    public interface IOrderedRepository
+    public interface IOrderRepository
     {
-        IEnumerable<Ordered> GetAll();
-        Ordered GetById(int id);
+        IEnumerable<Order> GetAll();
+        Order GetById(int id);
     }
 }

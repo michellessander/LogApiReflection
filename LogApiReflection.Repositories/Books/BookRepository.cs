@@ -16,7 +16,7 @@ namespace LogApiReflection.Repositories.Books
         public IEnumerable<Book> GetAll() => Book.Include(x => x.Author);
 
         public Book GetById(int id) => Book.Include(x => x.Author).FirstOrDefault(x => x.Id.Equals(id));
-        public int Insert(Book book)
+        public int Add(Book book)
         {
             Book.Add(book);
             return SaveChanges();
