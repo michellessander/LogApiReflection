@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Threading.Tasks;
+using System.Xml.Linq;
 using LogApiReflection.Domain;
 using LogApiReflection.Repositories.Books;
 
@@ -8,7 +9,7 @@ namespace LogApiReflection.Services.Books
     public class BookService : IBookService
     {
         private readonly IBookRepository _bookRepository;
-        
+
         public BookService(IBookRepository bookRepository)
         {
             _bookRepository = bookRepository;
@@ -18,6 +19,8 @@ namespace LogApiReflection.Services.Books
 
         public Book GetById(int id) => _bookRepository.GetById(id);
 
-        public int Add(Book book) => _bookRepository.Add(book);
+        public int Add(Book book) => ValidadeNotExists(book.Title) ? _bookRepository.Add(book) : 0;
+
+        private bool ValidadeNotExists(string title) => _bookRepository.GetByTitle(title) == null;
     }
 }

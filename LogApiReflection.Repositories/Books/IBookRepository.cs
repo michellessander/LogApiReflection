@@ -9,5 +9,6 @@ namespace LogApiReflection.Repositories.Books
         IEnumerable<Book> GetAll();
         Book GetById(int id);
         int Add(Book book);
+        Book GetByTitle(string title);
     }
 }

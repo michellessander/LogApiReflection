@@ -6,14 +6,10 @@ using Microsoft.EntityFrameworkCore.Internal;
 
 namespace LogApiReflection.Repositories
 {
-    public class OrderRepository : DbContext, IOrderRepository
+    public class OrderRepository : ApplicationDbContext, IOrderRepository
     {
-        public OrderRepository(DbContextOptions<OrderRepository> options)
+        public OrderRepository(DbContextOptions<ApplicationDbContext> options)
             : base(options) { }
-
-        public DbSet<Order> Order { get; set; }
-
-        public new int SaveChanges() => base.SaveChanges();
 
         public IEnumerable<Order> GetAll()
         {

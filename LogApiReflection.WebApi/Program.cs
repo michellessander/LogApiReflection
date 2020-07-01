@@ -21,7 +21,6 @@ namespace LogApiReflection
             using (var scope = host.Services.CreateScope())
             {
                 var services = scope.ServiceProvider;
-                services.GetRequiredService<OrderRepository>();
                 DataGenerator.Initialize(services);
             }
             host.Run();

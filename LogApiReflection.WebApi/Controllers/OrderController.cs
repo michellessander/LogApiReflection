@@ -39,6 +39,7 @@ namespace LogApiReflection.Controllers
         {
             var book = JsonSerializer.Deserialize<Order>(json.ToString());
             var response = _orderService.Add(book);
+            if (response == 0) return NoContent();
             return Ok(response);
         }
     }

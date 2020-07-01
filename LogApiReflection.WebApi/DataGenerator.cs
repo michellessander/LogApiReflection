@@ -12,7 +12,7 @@ namespace LogApiReflection
     {
         public static void Initialize(IServiceProvider serviceProvider)
         {
-            using var context = new OrderRepository(serviceProvider.GetRequiredService<DbContextOptions<OrderRepository>>());
+            using var context = new OrderRepository(serviceProvider.GetRequiredService<DbContextOptions<ApplicationDbContext>>());
             if (context.Order.Any())
             {
                 return;
@@ -46,7 +46,7 @@ namespace LogApiReflection
 
             var order = new Order {Id = 1, Books = books};
                 
-            context.Order.Add(order);
+            context.Order.Add(order); 
             context.SaveChanges();
         }
     }

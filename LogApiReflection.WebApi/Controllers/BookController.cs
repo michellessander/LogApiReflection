@@ -40,6 +40,7 @@ namespace LogApiReflection.Controllers
         {
             var book = JsonSerializer.Deserialize<Book>(json.ToString());
             var response = _bookService.Add(book);
+            if (response == 0) return NoContent();
             return Ok(response);
         }
     }
