@@ -7,5 +7,6 @@ namespace LogApiReflection.Repositories
     {
         IEnumerable<Order> GetAll();
         Order GetById(int id);
+        int Add(Order order);
     }
 }

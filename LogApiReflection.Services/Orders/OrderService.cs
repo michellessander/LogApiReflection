@@ -22,12 +22,16 @@ namespace LogApiReflection.Services
 
         public int Add(Order order)
         {
-            if (order.Books.Any())
-                foreach (var book in order.Books)
-                {
-                    _bookService.Add(book);
-                }
-            
+            if (order.Books.Any()) AddBook(order);
+            return _orderRepository.Add(order);
+        }
+
+        private void AddBook(Order order)
+        {
+            foreach (var book in order.Books)
+            {
+                _bookService.Add(book);
+            }
         }
     }
 }

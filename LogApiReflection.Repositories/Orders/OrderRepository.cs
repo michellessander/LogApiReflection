@@ -26,5 +26,11 @@ namespace LogApiReflection.Repositories
             var order = Order.Include(x => x.Books).FirstOrDefault(x => x.Id.Equals(id));
             return order;
         }
+
+        public int Add(Order order)
+        {
+            Order.Add(order);
+            return SaveChanges();
+        }
     }
 }
