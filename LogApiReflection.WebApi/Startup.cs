@@ -1,5 +1,7 @@
 using LogApiReflection.Repositories;
+using LogApiReflection.Repositories.Books;
 using LogApiReflection.Services;
+using LogApiReflection.Services.Books;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.DependencyInjection;
@@ -32,6 +34,8 @@ namespace LogApiReflection
             services.AddControllers();
             services.AddScoped<IOrderedRepository, OrderedRepository>();
             services.AddScoped<IOrderedService, OrderedService>();
+            services.AddScoped<IBookRepository, BookRepository>();
+            services.AddScoped<IBookService, BookService>();
         }
     }
 }

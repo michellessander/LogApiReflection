@@ -28,7 +28,10 @@
       </e>
       <e p="LogApiReflection.Repositories" t="IncludeRecursive">
         <e p="bin" t="ExcludeRecursive" />
-        <e p="IOrderedRepository.cs" t="Include" />
+        <e p="Books" t="Include">
+          <e p="BookRepository.cs" t="Include" />
+          <e p="IBookRepository.cs" t="Include" />
+        </e>
         <e p="LogApiReflection.Repositories.csproj" t="IncludeRecursive" />
         <e p="obj" t="ExcludeRecursive">
           <e p="Debug" t="Include">
@@ -37,11 +40,17 @@
             </e>
           </e>
         </e>
-        <e p="OrderedRepository.cs" t="Include" />
+        <e p="Orders" t="Include">
+          <e p="IOrderedRepository.cs" t="Include" />
+          <e p="OrderedRepository.cs" t="Include" />
+        </e>
       </e>
       <e p="LogApiReflection.Services" t="IncludeRecursive">
         <e p="bin" t="ExcludeRecursive" />
-        <e p="IOrderedService.cs" t="Include" />
+        <e p="Books" t="Include">
+          <e p="BookService.cs" t="Include" />
+          <e p="IBookService.cs" t="Include" />
+        </e>
         <e p="LogApiReflection.Services.csproj" t="IncludeRecursive" />
         <e p="obj" t="ExcludeRecursive">
           <e p="Debug" t="Include">
@@ -50,7 +59,10 @@
             </e>
           </e>
         </e>
-        <e p="OrderedService.cs" t="Include" />
+        <e p="Orders" t="Include">
+          <e p="IOrderedService.cs" t="Include" />
+          <e p="OrderedService.cs" t="Include" />
+        </e>
       </e>
       <e p="LogApiReflection.sln" t="IncludeFlat" />
       <e p="LogApiReflection.WebApi" t="IncludeRecursive">
@@ -58,6 +70,7 @@
         <e p="appsettings.json" t="Include" />
         <e p="bin" t="ExcludeRecursive" />
         <e p="Controllers" t="Include">
+          <e p="BookController.cs" t="Include" />
           <e p="OrderedController.cs" t="Include" />
         </e>
         <e p="DataGenerator.cs" t="Include" />

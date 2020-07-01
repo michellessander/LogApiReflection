@@ -19,7 +19,16 @@ namespace LogApiReflection.Controllers
         {
             var result = _orderedService.GetAll();
 
-            if (!result.Any()) return BadRequest("Não encontrado!");
+            if (!result.Any()) return BadRequest("Nenhum registro encontrado!");
+            return Ok(result);
+        }
+        
+        [HttpGet("{id}")]
+        public IActionResult GetById(int id)
+        {
+            var result = _orderedService.GetById(id);
+
+            if (result == null) return BadRequest("Registro não encontrado!");
             return Ok(result);
         }
     }
