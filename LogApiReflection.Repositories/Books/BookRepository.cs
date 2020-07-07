@@ -10,6 +10,7 @@ namespace LogApiReflection.Repositories.Books
     {
         public BookRepository(DbContextOptions<ApplicationDbContext> options)
             : base(options) { }
+        
 
         public IEnumerable<Book> GetAll() => Book.Include(x => x.Author);
 

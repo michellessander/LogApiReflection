@@ -28,6 +28,10 @@
       </e>
       <e p="LogApiReflection.Repositories" t="IncludeRecursive">
         <e p="ApplicationDbContext.cs" t="Include" />
+        <e p="Authors" t="Include">
+          <e p="AuthorRepository.cs" t="Include" />
+          <e p="IAuthorRepository.cs" t="Include" />
+        </e>
         <e p="bin" t="ExcludeRecursive" />
         <e p="Books" t="Include">
           <e p="BookRepository.cs" t="Include" />
@@ -47,6 +51,10 @@
         </e>
       </e>
       <e p="LogApiReflection.Services" t="IncludeRecursive">
+        <e p="Authors" t="Include">
+          <e p="AuthorService.cs" t="Include" />
+          <e p="IAuthorService.cs" t="Include" />
+        </e>
         <e p="bin" t="ExcludeRecursive" />
         <e p="Books" t="Include">
           <e p="BookService.cs" t="Include" />
@@ -71,6 +79,7 @@
         <e p="appsettings.json" t="Include" />
         <e p="bin" t="ExcludeRecursive" />
         <e p="Controllers" t="Include">
+          <e p="AuthorController.cs" t="Include" />
           <e p="BookController.cs" t="Include" />
           <e p="OrderController.cs" t="Include" />
         </e>

@@ -1,25 +1,25 @@
 ﻿using System.Linq;
 using System.Text.Json;
 using LogApiReflection.Domain;
-using LogApiReflection.Services.Books;
+using LogApiReflection.Services.Authors;
 using Microsoft.AspNetCore.Mvc;
 
 namespace LogApiReflection.Controllers
 {
     [Route("api/[controller]")]
-    public class BookController : Controller
+    public class AuthorController : Controller
     {
-        private readonly IBookService _bookService;
+        private readonly IAuthorService _authorService;
 
-        public BookController(IBookService bookService)
+        public AuthorController(IAuthorService authorService)
         {
-            _bookService = bookService;
+            _authorService = authorService;
         }
 
         [HttpGet]
         public IActionResult Get()
         {
-            var result = _bookService.GetAll();
+            var result = _authorService.GetAll();
 
             if (!result.Any()) return BadRequest("Nenhum registro encontrado!");
             return Ok(result);
@@ -28,7 +28,7 @@ namespace LogApiReflection.Controllers
         [HttpGet("{id}")]
         public IActionResult GetById(int id)
         {
-            var result = _bookService.GetById(id);
+            var result = _authorService.GetById(id);
 
             if (result == null) return BadRequest("Registro não encontrado!");
             return Ok(result);
@@ -37,8 +37,8 @@ namespace LogApiReflection.Controllers
         [HttpPost]
         public IActionResult Post([FromBody] JsonElement json)
         {
-            var book = JsonSerializer.Deserialize<Book>(json.ToString());
-            var response = _bookService.Add(book);
+            var author = JsonSerializer.Deserialize<Author>(json.ToString());
+            var response = _authorService.Add(author);
             if (response == 0) return NoContent();
             return Ok(response);
         }
