@@ -15,6 +15,7 @@ namespace LogApiReflection.Repositories
         public DbSet<Order> Order { get; set; }
         public DbSet<Book> Book { get; set; }
         public DbSet<Author> Author { get; set; }
+        public DbSet<Log> Log { get; set; }
         
         public new int SaveChanges() => base.SaveChanges();
     }

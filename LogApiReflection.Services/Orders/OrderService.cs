@@ -4,17 +4,19 @@ using LogApiReflection.Domain;
 using LogApiReflection.Repositories;
 using LogApiReflection.Services.Books;
 
-namespace LogApiReflection.Services
+namespace LogApiReflection.Services.Orders
 {
     public class OrderService: IOrderService
     {
         private readonly IOrderRepository _orderRepository;
         private readonly IBookService _bookService;
+        private readonly LogService _logService;
         
-        public OrderService(IOrderRepository orderRepository, IBookService bookService)
+        public OrderService(IOrderRepository orderRepository, IBookService bookService, LogService logService)
         {
             _orderRepository = orderRepository;
             _bookService = bookService;
+            _logService = logService;
         }
 
         public IEnumerable<Order> GetAll() => _orderRepository.GetAll();
@@ -24,7 +26,9 @@ namespace LogApiReflection.Services
         public int Add(Order order)
         {
             if (order.Books.Any()) AddBook(order);
-            return _orderRepository.Add(order);
+            var response = _orderRepository.Add(order);
+            if (response != 0) _logService.Log(order);
+            return response;
         }
 
         private void AddBook(Order order)
