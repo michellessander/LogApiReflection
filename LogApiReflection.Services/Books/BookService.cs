@@ -1,7 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Threading.Tasks;
-using System.Xml.Linq;
 using LogApiReflection.Domain;
 using LogApiReflection.Repositories.Books;
 using LogApiReflection.Services.Authors;

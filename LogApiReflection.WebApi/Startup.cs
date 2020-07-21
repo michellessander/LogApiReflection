@@ -1,14 +1,6 @@
 using LogApiReflection.Repositories;
-using LogApiReflection.Repositories.Authors;
-using LogApiReflection.Repositories.Books;
 using LogApiReflection.Repositories.Ioc;
-using LogApiReflection.Repositories.Logs;
-using LogApiReflection.Services;
-using LogApiReflection.Services.Authors;
-using LogApiReflection.Services.Books;
 using LogApiReflection.Services.Ioc;
-using LogApiReflection.Services.Logs;
-using LogApiReflection.Services.Orders;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.DependencyInjection;

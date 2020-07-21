@@ -1,5 +1,4 @@
 ﻿using System.Linq;
-using LogApiReflection.Services;
 using LogApiReflection.Services.Logs;
 using Microsoft.AspNetCore.Mvc;
 

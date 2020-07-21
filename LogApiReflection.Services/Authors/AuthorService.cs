@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Net;
 using LogApiReflection.Domain;
 using LogApiReflection.Repositories.Authors;
 using LogApiReflection.Services.Logs;
