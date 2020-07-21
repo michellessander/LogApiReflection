@@ -33,14 +33,14 @@ namespace LogApiReflection
         
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddScoped<ILogRepository, LogRepository>();
+            services.AddScoped<ILogService, LogService>();
             services.AddScoped<IOrderRepository, OrderRepository>();
             services.AddScoped<IOrderService, OrderService>();
             services.AddScoped<IBookRepository, BookRepository>();
             services.AddScoped<IBookService, BookService>();
             services.AddScoped<IAuthorRepository, AuthorRepository>();
             services.AddScoped<IAuthorService, AuthorService>();
-            services.AddScoped<ILogRepository, LogRepository>();
-            services.AddScoped<ILogService, LogService>();
             services.AddDbContext<ApplicationDbContext>(opt => opt.UseInMemoryDatabase("LogApiReflection"));
             services.AddControllers();
 

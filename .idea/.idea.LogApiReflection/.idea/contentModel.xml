@@ -38,7 +38,9 @@
           <e p="BookRepository.cs" t="Include" />
           <e p="IBookRepository.cs" t="Include" />
         </e>
+        <e p="ILogRepository.cs" t="Include" />
         <e p="LogApiReflection.Repositories.csproj" t="IncludeRecursive" />
+        <e p="LogRepository.cs" t="Include" />
         <e p="obj" t="ExcludeRecursive">
           <e p="Debug" t="Include">
             <e p="netcoreapp3.1" t="Include">
@@ -61,7 +63,9 @@
           <e p="BookService.cs" t="Include" />
           <e p="IBookService.cs" t="Include" />
         </e>
+        <e p="ILogService.cs" t="Include" />
         <e p="LogApiReflection.Services.csproj" t="IncludeRecursive" />
+        <e p="LogService.cs" t="Include" />
         <e p="obj" t="ExcludeRecursive">
           <e p="Debug" t="Include">
             <e p="netcoreapp3.1" t="Include">
@@ -82,6 +86,7 @@
         <e p="Controllers" t="Include">
           <e p="AuthorController.cs" t="Include" />
           <e p="BookController.cs" t="Include" />
+          <e p="LogController.cs" t="Include" />
           <e p="OrderController.cs" t="Include" />
         </e>
         <e p="DataGenerator.cs" t="Include" />

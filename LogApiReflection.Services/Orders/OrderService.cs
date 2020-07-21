@@ -10,9 +10,9 @@ namespace LogApiReflection.Services.Orders
     {
         private readonly IOrderRepository _orderRepository;
         private readonly IBookService _bookService;
-        private readonly LogService _logService;
+        private readonly ILogService _logService;
         
-        public OrderService(IOrderRepository orderRepository, IBookService bookService, LogService logService)
+        public OrderService(IOrderRepository orderRepository, IBookService bookService, ILogService logService)
         {
             _orderRepository = orderRepository;
             _bookService = bookService;

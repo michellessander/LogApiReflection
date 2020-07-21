@@ -5,7 +5,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace LogApiReflection.Controllers
 {
     [Route("api/[controller]")]
-    public class LogController
+    public class LogController : Controller
     {
         private readonly ILogService _logService;
         

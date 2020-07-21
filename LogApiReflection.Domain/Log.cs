@@ -1,6 +1,6 @@
 ﻿namespace LogApiReflection.Domain
 {
-    public class Log
+    public class Log : EntityBase
     {
         public string Texto { get; set; }
     }

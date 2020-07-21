@@ -6,7 +6,7 @@ namespace LogApiReflection.Repositories
 {
     public class LogRepository : ApplicationDbContext, ILogRepository
     {
-        protected LogRepository(DbContextOptions<ApplicationDbContext> options)
+        public LogRepository(DbContextOptions<ApplicationDbContext> options)
             : base(options) { }
 
         public void Add(Log log) => Log.Add(log);
