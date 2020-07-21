@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Net;
 using LogApiReflection.Domain;
 using LogApiReflection.Repositories.Authors;
+using LogApiReflection.Services.Logs;
 
 namespace LogApiReflection.Services.Authors
 {

@@ -1,10 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-using LogApiReflection.Domain;
-using LogApiReflection.Repositories;
+using LogApiReflection.Repositories.Logs;
 
-namespace LogApiReflection.Services
+namespace LogApiReflection.Services.Logs
 {
     public class LogService : ILogService
     {
@@ -29,11 +28,11 @@ namespace LogApiReflection.Services
             SaveLog(builder.ToString());
         }
 
-        public IEnumerable<Log> GetAll() => _logRepository.GetAll();
+        public IEnumerable<Domain.Log> GetAll() => _logRepository.GetAll();
 
         private void SaveLog(string texto)
         {
-            var log = new Log {Texto = texto};
+            var log = new Domain.Log {Texto = texto};
             _logRepository.Add(log);
         }
     }

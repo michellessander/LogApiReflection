@@ -4,6 +4,7 @@ using System.Linq;
 using LogApiReflection.Domain;
 using LogApiReflection.Repositories;
 using LogApiReflection.Services.Books;
+using LogApiReflection.Services.Logs;
 
 namespace LogApiReflection.Services.Orders
 {

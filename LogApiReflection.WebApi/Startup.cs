@@ -1,9 +1,13 @@
 using LogApiReflection.Repositories;
 using LogApiReflection.Repositories.Authors;
 using LogApiReflection.Repositories.Books;
+using LogApiReflection.Repositories.Ioc;
+using LogApiReflection.Repositories.Logs;
 using LogApiReflection.Services;
 using LogApiReflection.Services.Authors;
 using LogApiReflection.Services.Books;
+using LogApiReflection.Services.Ioc;
+using LogApiReflection.Services.Logs;
 using LogApiReflection.Services.Orders;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -33,14 +37,8 @@ namespace LogApiReflection
         
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddScoped<ILogRepository, LogRepository>();
-            services.AddScoped<ILogService, LogService>();
-            services.AddScoped<IOrderRepository, OrderRepository>();
-            services.AddScoped<IOrderService, OrderService>();
-            services.AddScoped<IBookRepository, BookRepository>();
-            services.AddScoped<IBookService, BookService>();
-            services.AddScoped<IAuthorRepository, AuthorRepository>();
-            services.AddScoped<IAuthorService, AuthorService>();
+            IocRepositories.Register(services);
+            IocServices.Register(services);
             services.AddDbContext<ApplicationDbContext>(opt => opt.UseInMemoryDatabase("LogApiReflection"));
             services.AddControllers();
 

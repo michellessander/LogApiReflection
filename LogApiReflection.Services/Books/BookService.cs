@@ -5,6 +5,7 @@ using System.Xml.Linq;
 using LogApiReflection.Domain;
 using LogApiReflection.Repositories.Books;
 using LogApiReflection.Services.Authors;
+using LogApiReflection.Services.Logs;
 
 namespace LogApiReflection.Services.Books
 {
