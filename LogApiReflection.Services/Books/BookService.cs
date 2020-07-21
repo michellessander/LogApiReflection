@@ -12,11 +12,13 @@ namespace LogApiReflection.Services.Books
     {
         private readonly IBookRepository _bookRepository;
         private readonly IAuthorService _authorService;
+        private readonly ILogService _logService;
 
-        public BookService(IBookRepository bookRepository, IAuthorService authorService)
+        public BookService(IBookRepository bookRepository, IAuthorService authorService, ILogService logService)
         {
             _bookRepository = bookRepository;
             _authorService = authorService;
+            _logService = logService;
         }
 
         public IEnumerable<Book> GetAll() => _bookRepository.GetAll();
@@ -27,8 +29,9 @@ namespace LogApiReflection.Services.Books
         {
             if (!ValidadeNotExists(book.Title)) return 0;
             if (book.Author != null) AddAuthor(book);
-            return _bookRepository.Add(book);
-
+            var response = _bookRepository.Add(book);
+            if (response != 0) _logService.Log(book, "Add");
+            return response;
         }
 
         private void AddAuthor(Book book) => _authorService.Add(book.Author);
