@@ -5,7 +5,7 @@ namespace LogApiReflection.Services
 {
     public interface ILogService
     {
-        void Log(object obj);
+        void Log(object obj, string operation);
         IEnumerable<Log> GetAll();
     }
 }

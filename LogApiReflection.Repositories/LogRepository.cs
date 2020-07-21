@@ -9,7 +9,11 @@ namespace LogApiReflection.Repositories
         public LogRepository(DbContextOptions<ApplicationDbContext> options)
             : base(options) { }
 
-        public void Add(Log log) => Log.Add(log);
+        public void Add(Log log)
+        {
+            Log.Add(log);
+            SaveChanges();
+        }
         public IEnumerable<Log> GetAll() => Log;
     }
 }

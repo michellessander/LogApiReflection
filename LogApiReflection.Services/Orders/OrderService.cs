@@ -27,7 +27,7 @@ namespace LogApiReflection.Services.Orders
         {
             if (order.Books.Any()) AddBook(order);
             var response = _orderRepository.Add(order);
-            if (response != 0) _logService.Log(order);
+            if (response != 0) _logService.Log(order, "Add");
             return response;
         }
 

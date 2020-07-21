@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using LogApiReflection.Domain;
 using LogApiReflection.Repositories;
+using Microsoft.EntityFrameworkCore.Metadata.Internal;
 
 namespace LogApiReflection.Services
 {
@@ -14,18 +15,18 @@ namespace LogApiReflection.Services
             _logRepository = logRepository;
         }
 
-        public void Log(object obj)
+        public void Log(object obj, string operation)
         {
-            var tipo = obj.GetType();
+            var type = obj.GetType();
 
             var builder = new StringBuilder();
-            builder.AppendLine("Log do " + tipo.Name);
-            builder.AppendLine("Data: " + DateTime.Now);
-            
-            foreach (var prop in tipo.GetProperties())
-            {
-                builder.AppendLine(prop.Name + ": " + prop.GetValue(obj));
-            }
+            builder.Append("Log:" + type.Name);
+            builder.Append(" - Operation: " + operation);
+            builder.Append(" - Date: " + DateTime.Now);
+
+            var prop = type.GetProperty("Id");
+            builder.Append(" - " + prop?.Name + ": " + prop?.GetValue(obj));
+         
             SaveLog(builder.ToString());
         }
 
