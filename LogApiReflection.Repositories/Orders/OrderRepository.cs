@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using LogApiReflection.Domain;
 using Microsoft.EntityFrameworkCore;
@@ -17,7 +18,7 @@ namespace LogApiReflection.Repositories
             return orderList.ToList();
         }
 
-        public Order GetById(int id)
+        public Order GetById(Guid id)
         {
             var order = Order.Include(x => x.Books).FirstOrDefault(x => x.Id.Equals(id));
             return order;

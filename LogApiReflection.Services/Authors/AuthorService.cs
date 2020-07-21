@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using LogApiReflection.Domain;
 using LogApiReflection.Repositories.Authors;
 
@@ -16,7 +17,7 @@ namespace LogApiReflection.Services.Authors
 
         public IEnumerable<Author> GetAll() => _authorRepository.GetAll();
 
-        public Author GetById(int id) => _authorRepository.GetById(id);
+        public Author GetById(Guid id) => _authorRepository.GetById(id);
 
         public int Add(Author author) => ValidadeNotExists(author.Name) ? _authorRepository.Add(author) : 0;
 

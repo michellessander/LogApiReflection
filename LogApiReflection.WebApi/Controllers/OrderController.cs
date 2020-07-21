@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using System;
+using System.Linq;
 using System.Text.Json;
 using LogApiReflection.Domain;
 using LogApiReflection.Services.Orders;
@@ -26,7 +27,7 @@ namespace LogApiReflection.Controllers
         }
         
         [HttpGet("{id}")]
-        public IActionResult GetById(int id)
+        public IActionResult GetById(Guid id)
         {
             var result = _orderService.GetById(id);
 

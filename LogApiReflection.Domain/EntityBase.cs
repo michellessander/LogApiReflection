@@ -1,7 +1,10 @@
-﻿namespace LogApiReflection.Domain
+﻿using System;
+using System.ComponentModel.DataAnnotations;
+
+namespace LogApiReflection.Domain
 {
     public class EntityBase
     {
-        public int Id { get; set; }
+        public Guid Id { get; set; }
     }
 }

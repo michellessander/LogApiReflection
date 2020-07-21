@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Text;
 using LogApiReflection.Domain;
 using LogApiReflection.Repositories;
-using Microsoft.EntityFrameworkCore.Metadata.Internal;
 
 namespace LogApiReflection.Services
 {

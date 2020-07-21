@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using LogApiReflection.Domain;
 using LogApiReflection.Repositories;
@@ -21,7 +22,7 @@ namespace LogApiReflection.Services.Orders
 
         public IEnumerable<Order> GetAll() => _orderRepository.GetAll();
 
-        public Order GetById(int id) => _orderRepository.GetById(id);
+        public Order GetById(Guid id) => _orderRepository.GetById(id);
 
         public int Add(Order order)
         {

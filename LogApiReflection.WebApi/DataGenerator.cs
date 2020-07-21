@@ -18,13 +18,12 @@ namespace LogApiReflection
                 return;
             }
 
-            var author1 = new Author {Id = 1, Name = "Gullar Ferreira"};
+            var author1 = new Author {Name = "Gullar Ferreira"};
 
-            var author2 = new Author {Id = 2, Name = "Pedro Alencar"};
+            var author2 = new Author {Name = "Pedro Alencar"};
 
             var book1 = new Book
             {
-                Id = 1,
                 Title = "Mil e uma noites.",
                 Category = Category.Drama,
                 NumberOfPages = 350,
@@ -34,7 +33,6 @@ namespace LogApiReflection
 
             var book2 = new Book
             {
-                Id = 2,
                 Title = "Era uma vez",
                 Category = Category.Romance,
                 NumberOfPages = 235,
@@ -44,7 +42,7 @@ namespace LogApiReflection
 
             var books = new List<Book>(){book1, book2};
 
-            var order = new Order {Id = 1, Books = books};
+            var order = new Order {Books = books};
                 
             context.Order.Add(order); 
             context.SaveChanges();

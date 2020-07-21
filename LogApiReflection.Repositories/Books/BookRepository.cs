@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using LogApiReflection.Domain;
@@ -14,7 +15,7 @@ namespace LogApiReflection.Repositories.Books
 
         public IEnumerable<Book> GetAll() => Book.Include(x => x.Author);
 
-        public Book GetById(int id) => Book.Include(x => x.Author).FirstOrDefault(x => x.Id.Equals(id));
+        public Book GetById(Guid id) => Book.Include(x => x.Author).FirstOrDefault(x => x.Id.Equals(id));
         
         public int Add(Book book)
         {

@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using LogApiReflection.Domain;
 using Microsoft.EntityFrameworkCore;
@@ -13,7 +14,7 @@ namespace LogApiReflection.Repositories.Authors
         
         public IEnumerable<Author> GetAll() => Author;
 
-        public Author GetById(int id) => Author.FirstOrDefault(x => x.Id.Equals(id));
+        public Author GetById(Guid id) => Author.FirstOrDefault(x => x.Id.Equals(id));
 
         public int Add(Author author)
         {
